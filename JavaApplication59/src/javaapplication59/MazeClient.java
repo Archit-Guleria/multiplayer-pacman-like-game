@@ -322,21 +322,21 @@ public class MazeClient extends JFrame {
     }
 
     private void drawGhostUp(Graphics2D g2d) {
-        g2d.drawImage(ghost, ghostx + 1, ghosty + 1, this);    
+        g2d.drawImage(ghost, ghostx, ghosty + 1, this);    
     }
 
     private void drawGhostDown(Graphics2D g2d) {
-        g2d.drawImage(ghost, ghostx + 1, ghosty + 1, this);        
+        g2d.drawImage(ghost, ghostx, ghosty - 1, this);        
     }
 
     private void drawGhostLeft(Graphics2D g2d) {
 
-        g2d.drawImage(ghost, ghostx + 1, ghosty + 1, this);
+        g2d.drawImage(ghost, ghostx - 1, ghosty, this);
     }
 
     private void drawGhostRight(Graphics2D g2d) {
 
-        g2d.drawImage(ghost, ghostx + 1, ghosty + 1, this);
+        g2d.drawImage(ghost, ghostx + 1, ghosty, this);
     }
 
     private void movePacman() {
@@ -479,18 +479,18 @@ public class MazeClient extends JFrame {
         int dx = 1;
         int random;
 
-        /*for (i = 0; i < nrofghosts; i++) {
-            ghosty[i] = 4 * blocksize;
-            ghostx[i] = 4 * blocksize;
-            ghostdy[i] = 0;
-            ghostdx[i] = dx;
+        {
+            ghosty = 4 * blocksize;
+            ghostx = 4 * blocksize;
+            ghostdy = 0;
+            ghostdx = dx;
             dx = -dx;
             random = (int) (Math.random() * (currentspeed + 1));
             if (random > currentspeed) {
                 random = currentspeed;
             }
-            ghostspeed[i] = validspeeds[random];
-        }*/
+            int ghostspeed = validspeeds[random];
+        }
 
         pacmanx = 14 * blocksize;
         pacmany = 14 * blocksize;
@@ -505,8 +505,8 @@ public class MazeClient extends JFrame {
 
     private void loadImages() {
 try{
-        ghost =  ImageIO.read(new File("20x20_png_icons_brian_by_jmcivor.png"));
-        pacman1 = ImageIO.read(new File("20x20_png_icons_brian_by_jmcivor.png"));
+       ghost =  ImageIO.read(new File("20x20_png_icons_brian_by_jmcivor.png"));
+        pacman1 = ImageIO.read(new File("20x20_png_icons_avatar_by_jmcivor.png"));
         pacman2up = ImageIO.read(new File("20x20_png_icons_brian_by_jmcivor.png"));
         pacman3up =  ImageIO.read(new File("20x20_png_icons_brian_by_jmcivor.png"));
         pacman4up =  ImageIO.read(new File("20x20_png_icons_brian_by_jmcivor.png"));
