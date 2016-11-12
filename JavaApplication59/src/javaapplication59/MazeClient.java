@@ -37,7 +37,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Daniel
+ * @author archit
  */
 public class MazeClient extends JFrame {
     
